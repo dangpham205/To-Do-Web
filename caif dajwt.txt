@@ -1,0 +1,25 @@
+pip3 install flask flask-sqlalchemy
+
+************************: cái này phải để cuối cùng
+if __name__ == "__main__":
+    app.run(debug=True)
+
+chạy bằng cmd:
+python app.py
+
+base.html sẽ là 1 cái khung:
+các file html khác sẽ thay đổi nội dung trong khung thôi
+
+để link css vào file base:
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"
+
+{{ }}: các giá trị trong nó sẽ đc hiểu là string
+{% %}: các giá trị trong là if, else,.....
+
+để tạo file db:
+trong cmd của môi trg ảo:
+1/python
+2/ >>> from app import db
+3/ >>> db.create_all()
+4/ >>> exit()
+

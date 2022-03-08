@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>TO DO LIST</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>TO DO LIST</h1>
+    {% if tasks|length < 1 %}
+        <h4>There are no tasks left :)</h4>
+        <img src="../static/css/meme.jpeg" alt="">
+    {% else %}
+    <table>
+        <tr>
+            <th>Created</th>
+            <th>Task</th>
+            <th>Deadline</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.date_created.date()}} </td>
+                <td>{{ task.content}} </td>
+                <td>{{ task.deadline}} </td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content" placeholder="Task">
+        <input type="text" name="deadline" id="deadline" placeholder="Deadline">
+        <input type="submit" value="Add Task" id="enter"> 
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+    background-color:burlywood;
+}
+
+h1,h4{
+    text-align: center;
+}
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #000;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+
+.form {
+    margin-top: 20px;
+}
+
+#content,
+#deadline {
+    width: 70%;
+    margin-top: 10px;
+}
+
+#enter{
+    margin-top: -14px;
+    height: 40px;
+    width: 100px;
+    float: right;
+}
+
